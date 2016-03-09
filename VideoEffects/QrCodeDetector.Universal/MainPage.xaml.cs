@@ -14,9 +14,9 @@ using Windows.Graphics.Display;
 using Windows.Media;
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
-#if WINDOWS_PHONE_APP
-using Windows.Phone.UI.Input;
-#endif
+//#if WINDOWS_PHONE_APP
+//using Windows.Phone.UI.Input;
+//#endif
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.System.Display;
@@ -31,7 +31,7 @@ using Windows.UI.Xaml.Navigation;
 using ZXing;
 using ZXing.Common;
 
-namespace QrCodeDetector
+namespace QrCodeDetector.Universal
 {
     public sealed partial class MainPage : Page
     {
@@ -40,9 +40,9 @@ namespace QrCodeDetector
         ContinuousAutoFocus m_autoFocus;
         bool m_initializing;
 
-#if !WINDOWS_PHONE_APP
+//#if !WINDOWS_PHONE_APP
         SystemMediaTransportControls m_mediaControls;
-#endif
+//#endif
         BarcodeReader m_reader = new BarcodeReader
         {
             Options = new DecodingOptions
@@ -70,12 +70,12 @@ namespace QrCodeDetector
             m_displayRequest.RequestActive();
 
             // Handle app going to and coming out of background
-#if WINDOWS_PHONE_APP
-            Application.Current.Resuming += App_Resuming;
-            Application.Current.Suspending += App_Suspending;
-            Window.Current.VisibilityChanged += Current_VisibilityChanged;
-            var ignore = InitializeCaptureAsync();
-#else
+//#if WINDOWS_PHONE_APP
+//            Application.Current.Resuming += App_Resuming;
+//            Application.Current.Suspending += App_Suspending;
+//            Window.Current.VisibilityChanged += Current_VisibilityChanged;
+//            var ignore = InitializeCaptureAsync();
+//#else
             m_mediaControls = SystemMediaTransportControls.GetForCurrentView();
             m_mediaControls.PropertyChanged += m_mediaControls_PropertyChanged;
 
@@ -83,18 +83,18 @@ namespace QrCodeDetector
             {
                 var ignore = InitializeCaptureAsync();
             }
-#endif
+//#endif
         }
 
         protected override async void OnNavigatedFrom(NavigationEventArgs e)
         {
-#if WINDOWS_PHONE_APP
-            Application.Current.Resuming -= App_Resuming;
-            Application.Current.Suspending -= App_Suspending;
-            Window.Current.VisibilityChanged -= Current_VisibilityChanged;
-#else
+//#if WINDOWS_PHONE_APP
+//            Application.Current.Resuming -= App_Resuming;
+//            Application.Current.Suspending -= App_Suspending;
+//            Window.Current.VisibilityChanged -= Current_VisibilityChanged;
+//#else
             m_mediaControls.PropertyChanged -= m_mediaControls_PropertyChanged;
-#endif
+//#endif
 
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.None;
 
@@ -103,37 +103,37 @@ namespace QrCodeDetector
             await DisposeCaptureAsync();
         }
 
-#if WINDOWS_PHONE_APP
-        private void App_Resuming(object sender, object e)
-        {
-            // Dispatch call to the UI thread since the event may get fired on some other thread
-            var ignore = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
-            {
-                await InitializeCaptureAsync();
-            });
-        }
+//#if WINDOWS_PHONE_APP
+//        private void App_Resuming(object sender, object e)
+//        {
+//            // Dispatch call to the UI thread since the event may get fired on some other thread
+//            var ignore = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+//            {
+//                await InitializeCaptureAsync();
+//            });
+//        }
 
-        private void App_Suspending(object sender, Windows.ApplicationModel.SuspendingEventArgs e)
-        {
-            // Dispatch call to the UI thread since the event may get fired on some other thread
-            var ignore = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
-            {
-                await DisposeCaptureAsync();
-            });
-        }
+//        private void App_Suspending(object sender, Windows.ApplicationModel.SuspendingEventArgs e)
+//        {
+//            // Dispatch call to the UI thread since the event may get fired on some other thread
+//            var ignore = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+//            {
+//                await DisposeCaptureAsync();
+//            });
+//        }
 
-        async void Current_VisibilityChanged(object sender, VisibilityChangedEventArgs e)
-        {
-            if (e.Visible)
-            {
-                await InitializeCaptureAsync();
-            }
-            else
-            {
-                await DisposeCaptureAsync();
-            }
-        }
-#else
+//        async void Current_VisibilityChanged(object sender, VisibilityChangedEventArgs e)
+//        {
+//            if (e.Visible)
+//            {
+//                await InitializeCaptureAsync();
+//            }
+//            else
+//            {
+//                await DisposeCaptureAsync();
+//            }
+//        }
+//#else
         void m_mediaControls_PropertyChanged(SystemMediaTransportControls sender, SystemMediaTransportControlsPropertyChangedEventArgs args)
         {
             if (args.Property != SystemMediaTransportControlsProperty.SoundLevel)
@@ -159,7 +159,7 @@ namespace QrCodeDetector
         {
             return m_mediaControls.SoundLevel == SoundLevel.Muted;
         }
-#endif
+//#endif
 
         void capture_Failed(MediaCapture sender, MediaCaptureFailedEventArgs errorEventArgs)
         {
@@ -212,7 +212,7 @@ namespace QrCodeDetector
 
                 // Enable QR code detection
                 var definition = new LumiaAnalyzerDefinition(ColorMode.Yuv420Sp, 640, AnalyzeBitmap);
-                await capture.AddEffectAsync(MediaStreamType.VideoPreview, definition.ActivatableClassId, definition.Properties);
+                //await capture.AddEffectAsync(MediaStreamType.VideoPreview, definition.ActivatableClassId, definition.Properties);
 
                 // Start preview
                 m_time.Restart();

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VideoEffects", "VideoEffects", "{B71AC1D0-8113-4E4A-833B-A2A2A059CFAB}"
 EndProject
@@ -57,11 +57,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrCodeDetector.WindowsPhone
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.Desktop", "UnitTests.Desktop\UnitTests.Desktop.csproj", "{B70FA178-ADC0-4163-BEDA-823CD69E36D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrCodeDetector.Universal", "QrCodeDetector.Universal\QrCodeDetector.Universal.csproj", "{A7E32D87-FBC4-4468-A986-420C76DC44AD}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		QrCodeDetector\QrCodeDetector.Shared\QrCodeDetector.Shared.projitems*{92d644a1-cd63-4831-869c-dfb8d992baca}*SharedItemsImports = 13
 		VideoEffects\VideoEffects.Shared\VideoEffects.Shared.vcxitems*{90ce9278-d95d-480d-a961-a552fbb24d9c}*SharedItemsImports = 4
 		QrCodeDetector\QrCodeDetector.Shared\QrCodeDetector.Shared.projitems*{003d346b-fc0c-4f17-8b47-035e12b0996b}*SharedItemsImports = 4
+		QrCodeDetector\QrCodeDetector.Shared\QrCodeDetector.Shared.projitems*{a7e32d87-fbc4-4468-a986-420c76dc44ad}*SharedItemsImports = 4
 		QrCodeDetector\QrCodeDetector.Shared\QrCodeDetector.Shared.projitems*{854fc7ce-1302-4ccc-ae3d-bfcfe51ddc0f}*SharedItemsImports = 4
 		VideoEffectsTestApp\VideoEffectsTestApp.Shared\VideoEffectsTestApp.Shared.projitems*{a62bf9d5-7a3f-47ff-889d-f39f170f290a}*SharedItemsImports = 4
 		VideoEffects\VideoEffects.Shared\VideoEffects.Shared.vcxitems*{59a29735-0a93-4e02-8f24-0097c62381c4}*SharedItemsImports = 9
@@ -582,6 +585,38 @@ Global
 		{B70FA178-ADC0-4163-BEDA-823CD69E36D7}.Release|Win32.ActiveCfg = Release|Any CPU
 		{B70FA178-ADC0-4163-BEDA-823CD69E36D7}.Release|x64.ActiveCfg = Release|Any CPU
 		{B70FA178-ADC0-4163-BEDA-823CD69E36D7}.Release|x86.ActiveCfg = Release|Any CPU
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|ARM.Build.0 = Debug|ARM
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|ARM.Deploy.0 = Debug|ARM
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|Win32.ActiveCfg = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|Win32.Build.0 = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|Win32.Deploy.0 = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|x64.ActiveCfg = Debug|x64
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|x64.Build.0 = Debug|x64
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|x64.Deploy.0 = Debug|x64
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|x86.ActiveCfg = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|x86.Build.0 = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Debug|x86.Deploy.0 = Debug|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|Any CPU.ActiveCfg = Release|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|ARM.ActiveCfg = Release|ARM
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|ARM.Build.0 = Release|ARM
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|ARM.Deploy.0 = Release|ARM
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|Mixed Platforms.Deploy.0 = Release|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|Win32.ActiveCfg = Release|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|Win32.Build.0 = Release|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|Win32.Deploy.0 = Release|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|x64.ActiveCfg = Release|x64
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|x64.Build.0 = Release|x64
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|x64.Deploy.0 = Release|x64
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|x86.ActiveCfg = Release|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|x86.Build.0 = Release|x86
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -596,5 +631,6 @@ Global
 		{92D644A1-CD63-4831-869C-DFB8D992BACA} = {AA5B935B-B444-42A3-8945-E760481B403E}
 		{003D346B-FC0C-4F17-8B47-035E12B0996B} = {AA5B935B-B444-42A3-8945-E760481B403E}
 		{854FC7CE-1302-4CCC-AE3D-BFCFE51DDC0F} = {AA5B935B-B444-42A3-8945-E760481B403E}
+		{A7E32D87-FBC4-4468-A986-420C76DC44AD} = {AA5B935B-B444-42A3-8945-E760481B403E}
 	EndGlobalSection
 EndGlobal
